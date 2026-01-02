@@ -1,5 +1,5 @@
 import { GoogleGenAI } from "@google/genai";
-import { Account } from "../types";
+import type { Account } from "../types";
 
 // Safe access to environment variables in different environments (Vite, Webpack, Node)
 const getEnvApiKey = () => {

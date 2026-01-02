@@ -13,7 +13,7 @@ import {
   AlertCircle,
   Settings
 } from 'lucide-react';
-import { Account, AccountType, INITIAL_ACCOUNTS } from './types';
+import { INITIAL_ACCOUNTS, type Account, type AccountType, type BalanceEntry } from './types';
 import { Charts } from './components/Charts';
 import { getDebtAnalysis } from './services/geminiService';
 

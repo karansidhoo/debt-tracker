@@ -11,7 +11,7 @@ import {
   AreaChart,
   Area
 } from 'recharts';
-import { Account } from '../types';
+import type { Account } from '../types';
 
 interface ChartsProps {
   accounts: Account[];
@@ -105,7 +105,7 @@ export const Charts: React.FC<ChartsProps> = ({ accounts }) => {
               <XAxis dataKey="date" stroke="#64748b" tickFormatter={(str) => new Date(str).toLocaleDateString(undefined, {month:'short', year: '2-digit'})} />
               <YAxis stroke="#64748b" tickFormatter={(val) => `$${val/1000}k`} />
               <Tooltip 
-                formatter={(value: number) => [`$${value.toLocaleString()}`, 'Debt']}
+                formatter={(value: any) => [`$${value.toLocaleString()}`, 'Debt']}
                 contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
               />
               <Area type="monotone" dataKey="amount" stroke="#ef4444" fillOpacity={1} fill="url(#colorCC)" />
@@ -162,7 +162,7 @@ export const Charts: React.FC<ChartsProps> = ({ accounts }) => {
               <XAxis dataKey="date" stroke="#64748b" tickFormatter={(str) => new Date(str).toLocaleDateString(undefined, {month:'short', year: '2-digit'})} />
               <YAxis stroke="#64748b" tickFormatter={(val) => `$${val/1000}k`} />
               <Tooltip 
-                 formatter={(value: number) => [`$${value.toLocaleString()}`, 'Balance']}
+                 formatter={(value: any) => [`$${value.toLocaleString()}`, 'Balance']}
                  contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
               />
               <Line type="monotone" dataKey="amount" stroke="#4f46e5" strokeWidth={3} dot={{r: 4, fill: '#4f46e5'}} activeDot={{ r: 8 }} />
